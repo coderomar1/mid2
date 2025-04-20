@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:mid2_test/applocale/applocale.dart';
-class SecondPage extends StatelessWidget {
+
+
+class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
+
+  @override
+   State<StatefulWidget> createState() => _SecondPage();
+
+
+}
+
+class _SecondPage extends State<SecondPage> {
+  var usernameController = TextEditingController();
+  var passwordController = TextEditingController();
+  var show = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,8 +29,8 @@ class SecondPage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(10),
             color: Colors.blueAccent,
-
             child:   TextField(
+              controller: usernameController,
               decoration: InputDecoration(
                   hintText: getLang(context, 'username'),
                   filled: true,
@@ -29,6 +43,7 @@ class SecondPage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(10),
             child:TextField(
+              controller: passwordController,
               decoration: InputDecoration(
                 hintText: getLang(context, 'password'),
                 filled: true,
@@ -53,7 +68,9 @@ class SecondPage extends StatelessWidget {
                   style: OutlinedButton.styleFrom(
                       backgroundColor: Colors.green
                   ),
-                    onPressed: (){}, 
+                    onPressed: (){
+                        show.text = usernameController.text + " : " + passwordController.text;
+                    },
                     child: Text(getLang(context, 'login')))
               ],
             ),
@@ -63,6 +80,7 @@ class SecondPage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(10),
             child:TextField(
+              controller: show,
               decoration: InputDecoration(
                 hintText: getLang(context, 'show'),
                 filled: true,
