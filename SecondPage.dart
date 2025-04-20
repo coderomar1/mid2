@@ -6,15 +6,70 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(getLang(context, 'homepage')),
+        backgroundColor: Colors.green,
+        title: Text(getLang(context, 'homepage'),),
       ),
       body: Column(
         children: [
-          const SizedBox(height: 20,),
           Container(
-              padding: const EdgeInsets.all(40),
-              child: Text(getLang(context, "welcome"),
-                style: TextStyle(color: Colors.blueGrey, fontSize: 25),))
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
+            color: Colors.blueAccent,
+
+            child:   TextField(
+              decoration: InputDecoration(
+                  hintText: getLang(context, 'username'),
+                  filled: true,
+                fillColor: Colors.green,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.blueAccent,
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
+            child:TextField(
+              decoration: InputDecoration(
+                hintText: getLang(context, 'password'),
+                filled: true,
+                fillColor: Colors.green,
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
+            color: Colors.blueAccent,
+            child:Row(
+              children: [
+                IconButton(
+                    onPressed: (){},
+                    icon: Icon(Icons.clear)),
+                ElevatedButton(
+                    onPressed: (){}, 
+                    child:Text(getLang(context, 'clear'))
+                ),
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.green
+                  ),
+                    onPressed: (){}, 
+                    child: Text(getLang(context, 'login')))
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.blueAccent,
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
+            child:TextField(
+              decoration: InputDecoration(
+                hintText: getLang(context, 'show'),
+                filled: true,
+                fillColor: Colors.green,
+              ),
+            ),
+          ),
         ],
       ),
     );
