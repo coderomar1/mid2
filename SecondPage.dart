@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:mid2_test/applocale/applocale.dart';
 
@@ -58,10 +60,15 @@ class _SecondPage extends State<SecondPage> {
             child:Row(
               children: [
                 IconButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      exit(0);
+                    },
                     icon: Icon(Icons.clear)),
                 ElevatedButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      usernameController.text = getLang(context, 'username');
+                      passwordController.text= getLang(context, 'password');
+                    },
                     child:Text(getLang(context, 'clear'))
                 ),
                 OutlinedButton(
