@@ -66,8 +66,9 @@ class _SecondPage extends State<SecondPage> {
                     icon: Icon(Icons.clear)),
                 ElevatedButton(
                     onPressed: (){
-                      usernameController.text = getLang(context, 'username');
-                      passwordController.text= getLang(context, 'password');
+                      usernameController.text = " ";
+                      passwordController.text= " ";
+                      show.text = " ";
                     },
                     child:Text(getLang(context, 'clear'))
                 ),
